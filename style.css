@@ -1,22 +1,18 @@
 /* CSS - Estilo Visual do Site */
-
-/* :root define as variáveis de cor para facilitar a customização */
 :root {
-    --bg-color: #fdf6f8; /* Fundo rosa bem claro */
+    --bg-color: #fdf6f8;
     --container-bg: #ffffff;
-    --primary-text: #3f3336; /* Texto principal com tom de marrom */
-    --accent-color: #e57373; /* Cor de destaque (botões, títulos) */
-    --accent-hover: #d32f2f; /* Cor ao passar o mouse */
+    --primary-text: #3f3336;
+    --accent-color: #e57373;
+    --accent-hover: #d32f2f;
     --border-color: #f1e4e8;
-    --error-color: #c0392b; /* Cor da mensagem de erro */
+    --error-color: #c0392b;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -24,7 +20,6 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: var(--bg-color);
-    /* Efeito de fundo sutil com pequenos círculos, como corações ou estrelas distantes */
     background-image:
         radial-gradient(circle at 1px 1px, rgba(229, 115, 115, 0.1) 1px, transparent 0),
         radial-gradient(circle at 15px 15px, rgba(229, 115, 115, 0.1) 1px, transparent 0);
@@ -32,7 +27,6 @@ body {
     color: var(--primary-text);
     transition: background-color 0.5s;
 }
-
 .container {
     width: 90%;
     max-width: 450px;
@@ -41,35 +35,29 @@ body {
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
     text-align: center;
-    overflow: hidden; /* Garante que o conteúdo não vaze durante as animações */
+    overflow: hidden;
 }
-
 .question-wrapper {
-    /* Transições para o efeito de fade-in/out */
     transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
-
 .question-wrapper.hidden {
     opacity: 0;
     transform: translateY(20px);
-    position: absolute; /* Remove do fluxo normal da página para não ocupar espaço */
-    width: calc(100% - 80px); /* Ajusta a largura para caber no container */
-    pointer-events: none; /* Desativa interação quando escondido */
+    position: absolute;
+    width: calc(100% - 80px);
+    pointer-events: none;
 }
-
 h2 {
-    font-family: 'Playfair Display', serif; /* Fonte elegante para títulos */
-    font-size: clamp(1.8rem, 5vw, 2rem); /* Tamanho de fonte responsivo */
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 5vw, 2rem);
     margin-bottom: 20px;
     color: var(--accent-color);
 }
-
 p {
-    font-size: clamp(1rem, 4vw, 1.1rem); /* Tamanho de fonte responsivo */
+    font-size: clamp(1rem, 4vw, 1.1rem);
     line-height: 1.6;
     margin-bottom: 25px;
 }
-
 input, textarea {
     width: 100%;
     padding: 14px;
@@ -80,18 +68,15 @@ input, textarea {
     margin-bottom: 20px;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 10px rgba(229, 115, 115, 0.2);
 }
-
 textarea {
-    resize: vertical; /* Permite redimensionar a caixa de texto verticalmente */
+    resize: vertical;
     min-height: 120px;
 }
-
 button {
     padding: 14px 40px;
     background-color: var(--accent-color);
@@ -103,32 +88,27 @@ button {
     font-weight: bold;
     transition: background-color 0.3s, transform 0.2s;
 }
-
 button:hover {
     background-color: var(--accent-hover);
-    transform: scale(1.05); /* Efeito de zoom sutil no botão */
+    transform: scale(1.05);
 }
-
 .error-message {
     color: var(--error-color);
     font-weight: bold;
-    height: 20px; /* Altura fixa para evitar que o layout "pule" ao exibir a mensagem */
+    height: 20px;
     margin-top: -15px;
     margin-bottom: 15px;
-    opacity: 0; /* Inicia transparente */
+    opacity: 0;
     transition: opacity 0.4s;
 }
-
 .error-message.visible {
-    opacity: 1; /* Torna a mensagem visível */
+    opacity: 1;
 }
-
 #final-screen p {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 25px;
 }
-
 .qr-code {
     max-width: 150px;
     width: 100%;
@@ -148,7 +128,6 @@ button:hover {
     color: var(--accent-hover);
     text-decoration: underline;
 }
-
 @keyframes shake {
     10%, 90% { transform: translateX(-1px); }
     20%, 80% { transform: translateX(2px); }
